@@ -29,13 +29,13 @@ function Login() {
   
              alert(JSON.stringify(result.data));
 
-        localStorage.setItem("token",result.data.token);
-
 
             setMsg(result.data.msg);
 
 
             if (result.data.status) {
+
+        localStorage.setItem("token",result.data.token);
 
                 // Redirect according to user type
                 if (result.data.utype === "vendor") {
