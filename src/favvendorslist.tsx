@@ -2,7 +2,7 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import "./favvendorlist.css";
 import { jwtDecode } from "jwt-decode";
-
+const API_URL=import.meta.env.VITE_API_URL
 
 interface TokenPayload {
     emailid: string;
@@ -37,7 +37,7 @@ function Favorites() {
             setLoading(true);
 
             const resp = await axios.post(
-                "http://localhost:2010/citizendashboardrouter/fetchFavorites",
+              `${API_URL}/citizendashboardrouter/fetchFavorites`,
                 {
                     citizensemailid: citizenEmail
                 }
@@ -60,7 +60,7 @@ function Favorites() {
     async function removeFavorite(vendor: Vendor) {
         try {
             const resp = await axios.post(
-                "http://localhost:2010/citizendashboardrouter/removeFavorite",
+            `${API_URL}/citizendashboardrouter/removeFavorite`,
                 {
                     citizensemailid: citizenEmail.trim(),
                     vendorsemailid: vendor.emailid
@@ -83,7 +83,7 @@ function Favorites() {
 async function handleRating(vendor: Vendor, star: number) {
     try {
         const resp = await axios.post(
-            "http://localhost:2010/vendorrouter/rate-vendor",
+      `${API_URL}/vendorrouter/rate-vendor`,
             {
                 emailid: vendor.emailid,
                 rating: star

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Eventsinfo.css";
 import { jwtDecode } from "jwt-decode";
-
+const API_URL=import.meta.env.VITE_API_URL
 interface TokenPayload {
     emailid: string;
 }
@@ -142,7 +142,7 @@ const [likedVendors, setLikedVendors] = useState<string[]>([]);
         async function getCities() {
             try {
                 const resp = await axios.post(
-                    "http://localhost:2010/vendorrouter/fetchCities"
+                   `${API_URL}/vendorrouter/fetchCities`
                 );
 
                 if (resp.data.status) {
@@ -176,7 +176,7 @@ const [likedVendors, setLikedVendors] = useState<string[]>([]);
             try {
                   const token = localStorage.getItem("token");
                 const resp = await axios.post(
-                    "http://localhost:2010/vendorrouter/findVendors",
+                  `${API_URL}/vendorrouter/findVendors`,
                     {
                         city: selectedCity,
                       
@@ -238,7 +238,7 @@ async function saveLike(vendor: Vendor) {
         if (likedVendors.includes(vendor.emailid)) {
             // Remove vendor from wishlist
             resp = await axios.post(
-                "http://localhost:2010/citizendashboardrouter/removeFavorite",
+               `${API_URL}/citizendashboardrouter/removeFavorite`,
                 fd
             );
 
@@ -252,7 +252,7 @@ async function saveLike(vendor: Vendor) {
         } else {
             // Add vendor to wishlist
             resp = await axios.post(
-                "http://localhost:2010/citizendashboardrouter/saveLike",
+               `${API_URL}/citizendashboardrouter/saveLike`,
                 fd
             );
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import axios from "axios";
 import "./AadharRegister.css";
-
+const API_URL=import.meta.env.VITE_API_URL
 interface AadharData {
     emailid:string;
     contact:string;
@@ -39,7 +39,7 @@ const [loading, setLoading] = useState(false);
 
 async function citizensUpdaterecord() {
     try {
-        let url = "http://localhost:2010/citizenrouter/citizensupdate";
+        let url = `${API_URL}/citizenrouter/citizensupdate`;
 
         let frmData = new FormData();
 
@@ -78,7 +78,7 @@ async function citizensFetch(
     
 ) {
    
-     let url = "http://localhost:2010/citizenrouter/citizensfind";
+     let url = `${API_URL}/citizenrouter/citizensfind`;
 
     try {
         let resp = await axios.post(url, {
@@ -145,7 +145,7 @@ function doBackPic(event: ChangeEvent<HTMLInputElement>) {
 
     try {
         const url =
-            "http://localhost:2010/citizenrouter/doExtractAadhaar";
+            `${API_URL}/citizenrouter/doExtractAadhaar`;
 
         const resp = await axios.post(url, frmData);
 
@@ -208,7 +208,7 @@ async function doSubmit(event: FormEvent<HTMLFormElement>) {
 
     try {
         const url =
-            "http://localhost:2010/citizenrouter/Citizenregister";
+           `${API_URL}/citizenrouter/Citizenregister`;
 
         const resp = await axios.post(url, frmData);
 

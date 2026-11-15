@@ -3,7 +3,7 @@ import "./citizendashboard.css";
 import DashboardNavbar from "./dashboardnavbar";
 import { FaHeart, FaSearch, FaUser } from "react-icons/fa";
   //npm install react-icons
-  
+
 function CitizenDashboard() {
 return (<>
     <DashboardNavbar/>

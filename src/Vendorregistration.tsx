@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 import "./VendorRegister.css";
 import axios from "axios";
-
+const API_URL=import.meta.env.VITE_API_URL
 interface VendorRegisterState {
     emailid: string;
     name: string;
@@ -70,7 +70,7 @@ function doUpdate(event: ChangeEvent<HTMLInputElement>) {
 
 async function doUpdaterecord() {
     try {
-        let url = "http://localhost:2010/vendorrouter/vendorupdate";
+        let url = `${API_URL}/vendorrouter/vendorupdate`;
 
         let frmData = new FormData();
 
@@ -101,7 +101,7 @@ if (resp.data.status === true) {
 useEffect
 (()=>{async function doFetch() {// when the page is loaded the obj.emailid is empty so no emailid is sent grom here just token validation done and from the backend from jwt validation the emailid will be sent to vendorfind
     try {
-        let url = "http://localhost:2010/vendorrouter/vendorfind";
+        let url = `${API_URL}/vendorrouter/vendorfind`;
 console.log(obj.emailid);
         let resp = await axios.post(url, {emailid:obj.emailid}, {
             headers: {
@@ -164,7 +164,7 @@ doFetch();},[]
    async function doRegister(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
-  let url="http://localhost:2010/vendorrouter/vendorsignup";
+  let url=`${API_URL}/vendorrouter/vendorsignup`;
 
         let frmData = new FormData();
 
