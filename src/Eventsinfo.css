@@ -1,0 +1,205 @@
+.events-page .events-results {
+    flex: 1;
+    min-width: 0;          /* lets the results shrink instead of overflowing */
+}
+
+.events-page .vendors-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* The card: image left, text right */
+.events-page .vendor-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Left side */
+.events-page .vendor-image-side {
+    flex: 0 0 280px;
+    max-width: 280px;
+}
+
+.events-page .vendor-image-side h3 {
+    margin: 0 0 10px;
+}
+
+.events-page .vendor-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Right side */
+.events-page .vendor-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.events-page .vendor-details h2 {
+    margin-top: 0;
+}
+
+.events-page .vendor-details p {
+    margin: 6px 0;
+    word-break: break-word;
+}
+
+/* Phones: stack image on top */
+@media (max-width: 700px) {
+    .events-page .vendor-card {
+        flex-direction: column;
+    }
+    .events-page .vendor-image-side {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* Narrower vendor card */
+.events-page .vendors-grid {
+    align-items: flex-start;
+}
+
+.events-page .vendor-card {
+    width: 100%;
+    max-width: 780px;      /* lower this (e.g. 650px) for an even narrower card */
+    padding: 20px;
+    gap: 20px;
+}
+
+.events-page .vendor-image-side {
+    flex: 0 0 220px;
+    max-width: 220px;
+}
+
+/* Bigger upper boxes (City, Event, Service, Email) */
+.events-page .events-form {
+    padding: 28px;
+    gap: 20px;
+}
+
+.events-page .form-group label,
+.events-page .citizen-email-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.events-page .form-group select,
+.events-page .citizen-email-box input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.events-page .events-sidebar {
+    min-width: 320px;      /* makes the whole sidebar column wider */
+}
+
+
+/* Form card */
+.events-page .events-sidebar {
+    min-width: 0;
+    width: 100%;
+    max-width: 420px;          /* controls how wide the boxes can get */
+}
+
+.events-page .events-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;                 /* space between each field */
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+.events-page .form-group,
+.events-page .citizen-email-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;                  /* space between label and its box */
+    margin: 0;
+}
+
+.events-page .form-group label,
+.events-page .citizen-email-box label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Dropdowns + email box */
+.events-page .form-group select,
+.events-page .citizen-email-box input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    font-size: 15px;
+    color: #222;
+    background-color: #fafafa;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.events-page .form-group select {
+    cursor: pointer;
+}
+
+.events-page .form-group select:hover,
+.events-page .citizen-email-box input:hover {
+    border-color: #b5b5b5;
+}
+
+.events-page .form-group select:focus,
+.events-page .citizen-email-box input:focus {
+    background-color: #fff;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.18);
+}
+
+.events-page .citizen-email-box input::placeholder {
+    color: #999;
+}
+.vendor-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 25px;
+    padding: 25px;
+    padding-right: 200px;
+}
+
+.vendor-actions {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}

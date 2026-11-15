@@ -1,0 +1,48 @@
+.citizen-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f6fa;
+}
+
+.citizen-sidebar {
+    width: 280px;
+    min-height: 100vh;
+    background: white;
+    padding: 25px 15px;
+    border-right: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.citizen-sidebar h2 {
+    color: #635bdb;
+    margin-bottom: 35px;
+}
+
+.citizen-sidebar h3 {
+    background: #5b9eae;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.citizen-sidebar a {
+    display: block;
+    padding: 14px;
+    margin-bottom: 3px;
+    text-decoration: none;
+    color: #496fc9;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.citizen-sidebar a.active {
+    background: #635bdb;
+    color: white;
+}
+
+.citizen-content {
+    flex: 1;
+    padding: 35px;
+    min-width: 0;
+}

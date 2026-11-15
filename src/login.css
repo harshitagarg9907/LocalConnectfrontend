@@ -1,0 +1,256 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f8fc;
+}
+
+/* LEFT IMAGE SECTION */
+
+.login-left {
+    width: 52%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 55px;
+    color: white;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(22, 24, 65, 0.88),
+            rgba(39, 37, 94, 0.55)
+        ),
+        url("https://images.unsplash.com/photo-1521737711867-e3b97375f902")
+        center/cover no-repeat;
+}
+
+.login-brand h2 {
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+
+.login-overlay {
+    max-width: 530px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.login-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #c7c9ff;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.login-overlay h1 {
+    font-size: clamp(40px, 4vw, 58px);
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.login-overlay p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e0e0ed;
+    max-width: 440px;
+}
+
+.login-footer {
+    font-size: 13px;
+    color: #d0d0e5;
+}
+
+
+/* RIGHT SECTION */
+
+.login-right {
+    width: 48%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+    background: #f8f8fc;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 40px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 45px rgba(30, 30, 70, 0.08);
+}
+
+
+/* HEADING */
+
+.login-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-icon {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    background: #eeeeff;
+    color: #6257d9;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.login-heading h2 {
+    font-size: 29px;
+    color: #25243a;
+    margin-bottom: 8px;
+}
+
+.login-heading p {
+    color: #88889b;
+    font-size: 14px;
+}
+
+
+/* FORM */
+
+.login-box label {
+    display: block;
+    margin-bottom: 9px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #33334a;
+}
+
+.login-box input {
+    width: 100%;
+    height: 49px;
+    padding: 0 14px;
+    border: 1px solid #e1e1eb;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.login-box input:focus {
+    border-color: #6257d9;
+    box-shadow: 0 0 0 3px rgba(98, 87, 217, 0.1);
+}
+
+.login-box input::placeholder {
+    color: #aaaabb;
+}
+
+
+/* LOGIN BUTTON */
+
+.login-box button {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(120deg, #6257d9, #8172ef);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(98, 87, 217, 0.25);
+}
+
+.login-box button span {
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+
+/* MESSAGE */
+
+.login-msg {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #dc3545;
+}
+
+
+/* SIGNUP LINK */
+
+.signup-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 13px;
+    color: #88889b;
+}
+
+.signup-text a {
+    color: #6257d9;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .login-left {
+        padding: 35px;
+    }
+
+    .login-box {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-left {
+        width: 100%;
+        min-height: 350px;
+    }
+
+    .login-right {
+        width: 100%;
+        min-height: auto;
+        padding: 35px 20px;
+    }
+
+    .login-overlay h1 {
+        font-size: 38px;
+    }
+
+    .login-box {
+        max-width: 450px;
+    }
+}

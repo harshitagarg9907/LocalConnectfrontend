@@ -1,0 +1,27 @@
+.dashboard-navbar {
+    height: 70px;
+    background: #263449;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+}
+
+.dashboard-navbar h2 {
+    color: white;
+    margin: 0;
+}
+
+.dashboard-navbar button {
+    background: #635bdb;
+    color: white;
+    border: none;
+    padding: 11px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.dashboard-navbar button:hover {
+    background: #5146b8;
+}

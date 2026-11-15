@@ -1,0 +1,137 @@
+
+.aadhar-page {
+    min-height: 100vh;
+    padding: 30px 16px;
+    background: #f3f5f9;
+    font-family: Arial, sans-serif;
+}
+
+.aadhar-form {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.aadhar-form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.aadhar-form h3 {
+    margin-top: 25px;
+    margin-bottom: 18px;
+}
+
+.upload-grid,
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-group input[readonly] {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.preview {
+    width: 100%;
+    max-height: 230px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+.extract-btn,
+.submit-btn {
+    width: 100%;
+    margin-top: 22px;
+    padding: 13px;
+    color: white;
+    background: #2563eb;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.submit-btn {
+    background: #15803d;
+}
+
+.extract-btn:hover {
+    background: #1d4ed8;
+}
+
+.submit-btn:hover {
+    background: #166534;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+    .aadhar-form {
+        padding: 20px;
+    }
+
+    .upload-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    gap: 10px;
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+    border: 5px solid #ddd;
+    border-top: 5px solid #198754;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

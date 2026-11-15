@@ -1,0 +1,188 @@
+/* Main page */
+.favorites-page {
+    min-height: 100vh;
+    padding: 35px;
+    background: #f7f5fb;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Page heading */
+.favorites-page h1 {
+    text-align: center;
+    color: #493078;
+    margin-bottom: 30px;
+}
+
+/* Email input and search button */
+.favorites-search {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.favorites-search input {
+    width: 320px;
+    padding: 12px 15px;
+    border: 1px solid #d8cde8;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.favorites-search input:focus {
+    border-color: #7650b5;
+}
+
+.favorites-search button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #65439a;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.favorites-search button:hover {
+    background: #4d307b;
+}
+
+/* Vendor cards container */
+.favorites-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual vendor card */
+.vendor-card {
+    display: flex;
+    align-items: stretch;
+    gap: 25px;
+    width: 100%;
+    padding: 22px;
+    background: white;
+    border: 1px solid #e7e0ef;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(50, 30, 80, 0.07);
+    box-sizing: border-box;
+}
+
+/* Vendor image */
+.vendor-card img {
+    width: 220px;
+    min-height: 200px;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+/* Vendor information */
+.vendor-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.vendor-details h2 {
+    color: #493078;
+    margin: 5px 0 18px;
+    font-size: 24px;
+}
+
+.vendor-details p {
+    margin: 12px 0;
+    color: #444;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.vendor-details strong {
+    color: #29213a;
+}
+
+/* Heart button */
+.like-btn {
+  background: transparent;   /* remove the red background */
+  color: inherit;            /* text keeps its normal color */
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.heart {
+  color: #999;               /* grey when not liked */
+}
+
+.heart.liked {
+  color: red;                /* only the heart turns red */
+}
+.like-button:hover {
+    transform: scale(1.15);
+}
+.like-button.liked {
+    background: #e63946;
+    color: white;
+}
+
+/* Empty favourites message */
+.no-favorites {
+    text-align: center;
+    color: #777;
+    font-size: 17px;
+    margin-top: 40px;
+}
+
+/* Mobile responsive layout */
+@media (max-width: 650px) {
+    .favorites-page {
+        padding: 18px;
+    }
+
+    .favorites-search {
+        flex-direction: column;
+    }
+
+    .favorites-search input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .vendor-card {
+        flex-direction: column;
+        gap: 15px;
+        padding: 16px;
+    }
+
+    .vendor-card img {
+        width: 100%;
+        height: 220px;
+        min-height: unset;
+        max-height: unset;
+    }
+
+    .vendor-details h2 {
+        font-size: 21px;
+    }
+}
+
+
+
+
+.rating-star {
+    background: transparent;
+    border: none;
+    color: gray;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.rating-star:has(+ .rating-star) {
+    transition: color gold;
+}
