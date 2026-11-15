@@ -4,7 +4,7 @@ import Eventsinfo from "./searchvendor";
 import Favorites from "./favvendorslist"
 import Signup from "./signup";
 import Login from "./login";
-import NavBar from "./Navbar";
+
 import { Route, Routes } from "react-router-dom";
 import VendorDashboard from "./vendor-dashboard";
 import CitizenDashboard from "./citizen-dashboard";

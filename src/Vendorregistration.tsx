@@ -142,7 +142,7 @@ doFetch();},[]
         if (file) {
             setObj({
                 ...obj,
-                shoppicurl: file
+             //   shoppicurl: file
             });
 
             setShopPreview(URL.createObjectURL(file));
@@ -157,7 +157,7 @@ doFetch();},[]
         if (file) {
             setObj({
                 ...obj,
-                certpicurl: file
+            //    certpicurl: file
             });
 
             setCertificatePreview(URL.createObjectURL(file));
