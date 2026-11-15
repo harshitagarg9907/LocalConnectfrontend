@@ -2,7 +2,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./login.css";
-
+const API_URL=import.meta.env.VITE_API_URL
 function Login() {
    const navigate = useNavigate();
     const [emailid, setEmailid] = useState("");
@@ -17,7 +17,8 @@ function Login() {
         try {
 
             const result = await axios.post(
-                "http://localhost:2010/login/login-process",
+               `${API_URL}/login/login-process"
+               `,
                 {
                     emailid,
                     password
