@@ -213,7 +213,7 @@ async function doSubmit(event: FormEvent<HTMLFormElement>) {
         const resp = await axios.post(url, frmData);
 
         if (resp.data.status) {
-            alert("registred"||JSON.stringify(resp.data.message));
+            alert(JSON.stringify(resp.data.message));
         } else {
             alert(resp.data.message || "Registration failed.");
         }

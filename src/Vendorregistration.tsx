@@ -181,7 +181,7 @@ doFetch();},[]
         frmData.append("estd", obj.estd);
         frmData.append("website", obj.website);
         frmData.append("insta", obj.insta);
-        frmData.append("selcate", obj.selcate);
+     //   frmData.append("selcate", obj.selcate);
         frmData.append(
             "categories",
             JSON.stringify(obj.selcate)
