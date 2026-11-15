@@ -103,7 +103,7 @@ useEffect
     try {
         let url = `${API_URL}/vendorrouter/vendorfind`;
 console.log(obj.emailid);
-        let resp = await axios.post(url, {emailid:obj.emailid}, {
+        let resp = await axios.post(url, {}, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }
