@@ -198,7 +198,7 @@ doFetch();},[]
             );
         }
        
-let resp=await axios.post(url,frmData,{headers: {'Content-Type': 'multipart/form-data'  } }
+await axios.post(url,frmData,{headers: {'Content-Type': 'multipart/form-data'  } }
 );
         // Send frmData to your backend registration API.
         console.log("Form data prepared:", obj);

@@ -131,7 +131,6 @@ function Eventsinfo() {
 
 const [citizenEmail, setCitizenEmail] = useState("");
 const [likedVendors, setLikedVendors] = useState<string[]>([]);
-const [likingVendor, setLikingVendor] = useState<string | null>(null);
 
 
     const selectedEventData = eventList.find(
