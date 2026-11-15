@@ -16,8 +16,8 @@ interface VendorRegisterState {
     website: string;
     insta: string;
     selcate: string[];
-   shoppicurl: string ;
-certpicurl: string ;
+     shoppicurl: File | null;
+    certpicurl: File | null;
 totalSum: number;
 count: number;
 }
@@ -36,18 +36,16 @@ function VendorRegister() {
         website: "",
         insta: "",
         selcate: [],
-        shoppicurl: "",
-        certpicurl: "",
+        shoppicurl: null,
+        certpicurl: null,
      totalSum: 0,
 count: 0
     });
 
     const [category, setCategory] = useState<string>("");
 
-    const [shopPreview, setShopPreview] = useState<string>("");
-    const [certificatePreview, setCertificatePreview] =
-        useState<string>("");
-
+    const [shopPreview, setShopPreview] = useState<string>("");    const [certificatePreview, setCertificatePreview] =
+       useState<string>("");
     const categoryOptions: string[] = [
        "Photographer",
             "Decoration",
@@ -87,9 +85,8 @@ async function doUpdaterecord() {
         frmData.append("website", obj.website);
         frmData.append("insta", obj.insta);
         frmData.append("categories", JSON.stringify(obj.selcate));
-       frmData.append("shoppicurl", obj.shoppicurl);  
-            frmData.append("certpicurl", obj.certpicurl);
-        
+    if (obj.shoppicurl) frmData.append("shopPic", obj.shoppicurl);
+if (obj.certpicurl) frmData.append("certificatePic", obj.certpicurl); 
 
         let resp = await axios.post(url, frmData);
 if (resp.data.status === true) {
@@ -142,7 +139,7 @@ doFetch();},[]
         if (file) {
             setObj({
                 ...obj,
-             //   shoppicurl: file
+               shoppicurl: file
             });
 
             setShopPreview(URL.createObjectURL(file));
@@ -157,7 +154,7 @@ doFetch();},[]
         if (file) {
             setObj({
                 ...obj,
-            //    certpicurl: file
+                certpicurl: file
             });
 
             setCertificatePreview(URL.createObjectURL(file));
