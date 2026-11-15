@@ -17,8 +17,7 @@ function Login() {
         try {
 
             const result = await axios.post(
-               `${API_URL}/login/login-process"
-               `,
+               `${API_URL}/login/login-process`,
                 {
                     emailid,
                     password
