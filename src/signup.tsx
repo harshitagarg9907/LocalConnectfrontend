@@ -2,7 +2,10 @@
 import { useState } from "react";
 import axios from "axios";
 import "./signup.css";
-const API_URL=import.meta.env.VITE_API_URL
+//const API_URL=import.meta.env.VITE_API_URL
+//const backend = "http://localhost:2010";//addn backend in place of import.meta.env.VITE_API_URL if i want to run this locally
+
+
 function Signup() {
 
     const [emailid, setEmailid] = useState("");
@@ -10,12 +13,14 @@ function Signup() {
     const [utype, setUtype] = useState("");
     const [msg, setMsg] = useState("");
 
+
+
     async function handleSignup(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
         try {
             const result = await axios.post(
-                `${API_URL}/signup/signup-process`,
+                `${import.meta.env.VITE_API_URL}/signup/signup-process`,
                 {
                     emailid,
                     password,
